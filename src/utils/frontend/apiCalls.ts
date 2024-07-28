@@ -14,18 +14,16 @@ export const getTodos = async () => {
   }
   return {error,todos}
 };
-export const updateTodo = async (data:{text?:string,isDone?:boolean},id:string) => {
-  let error = null;
+export const updateTodo = async (data: { text?: string; isDone?: boolean }, id: string) => {
+  let error: { message?: string; response?: { data: { message: string } } } | null = null;
   let result = null;
-console.log("clicked")
+
   try {
-    const response = await axios.put(`https://next-todolist-app.vercel.app/api/todos/${id}`,data);
+    const response = await axios.put(`https://next-todolist-app.vercel.app/api/todos/${id}`, data);
     result = response.data;
-    
-  } catch (err) {
+  } catch (err: any) {
     console.log(err);
     error = err;
-   
   }
-  return {error,result}
+  return { error, result };
 };

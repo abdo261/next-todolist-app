@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextUIProvider className="w-screen h-screen bg-gray-200 flex justify-center items-start py-4"><main className="w-[320px] sm:w-[400px] md:w-[800px]  h-full  ">{children}</main></NextUIProvider>
-        <ToastContainer autoClose={3000} theme="light" position="top-center"/>
+        <NextUIProvider className="w-screen h-screen bg-gray-200 flex justify-center items-start py-4"><main className="w-[320px] sm:w-[400px] md:w-[800px]  h-full  ">{children}</main><ToastContainer autoClose={3000} theme="light" position="top-center"/></NextUIProvider>
+        
       </body>
     </html>
   );
