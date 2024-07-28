@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { NextUIProvider } from "@nextui-org/react";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider className="w-screen h-screen bg-gray-200 flex justify-center items-start py-4"><main className="w-[320px] sm:w-[400px] md:w-[800px]  h-full  ">{children}</main></NextUIProvider>
+        <ToastContainer autoClose={3000} theme="light" position="top-center"/>
       </body>
     </html>
   );
