@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { connectToDB } from "../../../../lib/connect";
 import Todo from "../../../../models/model";
 import { validateCreateTodo } from "@/utils/backend/validation";
@@ -17,7 +17,7 @@ export const GET = async () => {
   }
 };
 
-export const POST = async (request: Request) => {
+export const POST = async (request: NextRequest) => {
   try {
     await connectToDB();
     const { text, isDone } = await request.json();
