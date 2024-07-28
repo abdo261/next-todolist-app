@@ -5,7 +5,7 @@ const Alert = ({
   type = "danger",
   title = "Something went wrong ",
 }: {
-  message: string;
+  message: any;
   type?: string;
   title?: string;
 }): React.ReactNode => {

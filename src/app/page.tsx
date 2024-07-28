@@ -16,9 +16,9 @@ interface TodoProps {
  
 }
 export default async function Home() {
-  const handleClick = () => toast.success("Hello");
+
 const {todos,error} = await getTodos()
-console.log( {todos,error} )
+
   return (
     <div className="flex flex-col  gap-3">
       <div className="flex justify-between items-center bg-white rounded-lg p-4">
@@ -35,12 +35,9 @@ console.log( {todos,error} )
         />
       </div>
       <div className="rounded-lg bg-white p-4">
-        {/*
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
-
+ {
+  error && <Alert message={error?.response?.data?.message | error?.message} />
+ }
       { todos &&  <div className="overflow-x-auto">
           <table className="min-w-full divide-y-2 divide-gray-200  text-sm border-1 border-gray-200 rounded-md">
             <thead className="ltr:text-left rtl:text-right">

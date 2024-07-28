@@ -9,6 +9,7 @@ import { MdRemoveDone } from 'react-icons/md';
 const ISDone = ({ isDone, id }: { isDone: boolean; id: string }) => {
     const [Done,setDone]=useState(isDone)
   const handelClick = async () => {
+    console.log('frent end clicked ')
     const { error } = await updateTodo({ isDone: !Done }, id);
     if (!error) {
         setDone(!Done);
