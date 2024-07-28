@@ -5,7 +5,7 @@ export const getTodos = async () => {
   let todos:any = null;
 
   try {
-    const response = await axios.get("https://next-todolist-app.vercel.app/api/todos");
+    const response = await axios.get("https://next-todolist-app-git-main-abdellah-ait-bachikhs-projects.vercel.app/api/todos");
     todos = response.data;
   } catch (err) {
     console.log(err);
@@ -17,9 +17,8 @@ export const getTodos = async () => {
 export const updateTodo = async (data: { text?: string; isDone?: boolean }, id: string) => {
   let error: { message?: string; response?: { data: { message: string } } } | null = null;
   let result = null;
-
   try {
-    const response = await axios.put(`https://next-todolist-app.vercel.app/api/todos/${id}`, data);
+    const response = await axios.put(`/api/todos/${id}`, data);
     result = response.data;
   } catch (err: any) {
     console.log(err);
